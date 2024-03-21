@@ -1,39 +1,12 @@
-import  prisma  from "./db";
-import Link from "next/link";
-import TodoItem from "./components/TodoItem";
+// MainPage.tsx
+import PrismaComponent from "./components/Prisma";
+import Pexels from "./components/Pexels";
 
-
-function getTodos() {
-  return prisma.todo.findMany();
-}
-
-async function toggleTodo(id: string, complete: boolean) {
-  "use server"
-
-  await prisma.todo.update({where: {id}, data: {complete}})
-}
-
-export default async function Home() {
-  const todos = await getTodos();
-  
+export default function MainPage() {
   return (
-    <>
-      <header className="flex justify-between mb-4 items-center">
-        <h1 className="text-3xl font-bold">Todo App</h1>
-        <Link
-          className="border border-slate-300 text-slate-300 px-2 py-1
-     rounded hover:bg-slate-700 focus-within:bg-slate-700 outline-none
-     "
-          href="/new"
-        >
-          New
-        </Link>
-      </header>
-      <ul className="pl-4">
-        {todos.map(todo => (
-         <TodoItem key={todo.id} {...todo} toggleTodo={toggleTodo}/>
-        ))}
-      </ul>
-    </>
+    <div>
+      <PrismaComponent />
+      {/* <Pexels /> */}
+    </div>
   );
 }

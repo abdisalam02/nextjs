@@ -1,9 +1,11 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+// next.config.js
 
-    experimental: {
-        serverActions: true,
+const nextConfig = {
+    images: {
+      domains: ['images.pexels.com'], // Add the domain for images from pexels.com
     },
-};
+  };
+  
 
 export default nextConfig;
