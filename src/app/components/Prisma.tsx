@@ -1,4 +1,3 @@
-// Home.tsx
 import Link from "next/link";
 import prisma from "../db";
 import TodoItem from "./TodoItem";
@@ -16,12 +15,12 @@ async function toggleTodo(id: string, complete: boolean) {
 export default async function Home() {
   const todos = await getTodos();
 
-  const todoItems = todos.map(todo => ({
+  const todoItems = todos.map((todo) => ({
     id: todo.id,
     title: todo.title,
     complete: todo.complete,
     toggleTodo: toggleTodo, // Pass toggleTodo function
-    imageUrl: "" // Set imageUrl to empty string initially
+    imageUrl: "", // Set imageUrl to empty string initially
   }));
 
   return (
@@ -36,10 +35,10 @@ export default async function Home() {
 }
 
 export async function getServerSideProps() {
-    const todos = await getTodos();
-    return {
-      props: {
-        todos
-      }
-    };
-  }
+  const todos = await getTodos();
+  return {
+    props: {
+      todos,
+    },
+  };
+}

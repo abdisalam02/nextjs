@@ -20,7 +20,6 @@ const TodoItem: React.FC<TodoItemProps> = ({
   imageUrl, // imageUrl prop added
 }) => {
   return (
-    <Link key={id} href={`/recipes/${id}`}>
       <div className="relative my-6 mx-2 bg-white dark:bg-[#18191c] shadow-xl hover:shadow duration-200 rounded-l group">
         <div className="relative w-full rounded-xl">
           <img
@@ -47,7 +46,6 @@ const TodoItem: React.FC<TodoItemProps> = ({
           </small>
         </div>
       </div>
-    </Link>
   );
 };
 

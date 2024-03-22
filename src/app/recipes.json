@@ -1,0 +1,72 @@
+[
+    {
+      "id": "1",
+      "title": "Spaghetti Carbonara",
+      "description": "Classic Italian pasta dish with eggs, cheese, pancetta, and black pepper.",
+      "ingredients": [
+        "200g spaghetti",
+        "2 large eggs",
+        "100g pancetta or guanciale, diced",
+        "50g grated Parmesan cheese",
+        "Salt and black pepper to taste"
+      ],
+      "instructions": [
+        "Cook spaghetti in boiling salted water according to package instructions until al dente.",
+        "In a separate bowl, whisk together eggs, grated Parmesan cheese, and black pepper.",
+        "In a skillet, cook diced pancetta until crispy. Remove from heat and drain excess fat.",
+        "Once spaghetti is cooked, drain and reserve some pasta water.",
+        "Add hot spaghetti to the skillet with pancetta. Toss to combine.",
+        "Pour egg and cheese mixture over the hot spaghetti. Quickly toss to coat the pasta, using reserved pasta water to loosen the sauce if needed.",
+        "Serve immediately with additional grated Parmesan cheese and black pepper."
+      ]
+    },
+    {
+      "id": "2",
+      "title": "Chicken Alfredo",
+      "description": "Creamy pasta dish with tender chicken, garlic, and Parmesan cheese.",
+      "ingredients": [
+        "300g fettuccine",
+        "2 boneless, skinless chicken breasts",
+        "3 cloves garlic, minced",
+        "1 cup heavy cream",
+        "1 cup grated Parmesan cheese",
+        "Salt and black pepper to taste",
+        "Fresh parsley for garnish"
+      ],
+      "instructions": [
+        "Cook fettuccine in boiling salted water according to package instructions until al dente.",
+        "Season chicken breasts with salt and black pepper. In a skillet, cook chicken until golden brown and cooked through. Remove from skillet and slice into strips.",
+        "In the same skillet, add minced garlic and cook until fragrant.",
+        "Add heavy cream to the skillet and bring to a simmer.",
+        "Stir in grated Parmesan cheese until melted and smooth.",
+        "Return cooked chicken strips to the skillet and toss to coat in the sauce.",
+        "Add cooked fettuccine to the skillet and toss to coat in the sauce.",
+        "Serve hot, garnished with fresh parsley."
+      ]
+    },
+    {
+      "id": "3",
+      "title": "Margherita Pizza",
+      "description": "Classic Italian pizza topped with tomato sauce, fresh mozzarella, basil, and olive oil.",
+      "ingredients": [
+        "1 pizza dough",
+        "1/2 cup tomato sauce",
+        "200g fresh mozzarella cheese, sliced",
+        "Fresh basil leaves",
+        "Extra virgin olive oil",
+        "Salt and black pepper to taste"
+      ],
+      "instructions": [
+        "Preheat oven to 475°F (245°C) and place a pizza stone in the oven to heat.",
+        "Stretch out pizza dough on a lightly floured surface to desired thickness.",
+        "Spread tomato sauce evenly over the pizza dough, leaving a border for the crust.",
+        "Arrange sliced mozzarella cheese over the sauce.",
+        "Top with fresh basil leaves.",
+        "Drizzle olive oil over the pizza and season with salt and black pepper.",
+        "Carefully transfer the pizza onto the preheated pizza stone in the oven.",
+        "Bake for 10-12 minutes or until the crust is golden brown and the cheese is melted and bubbly.",
+        "Remove from oven, slice, and serve hot."
+      ]
+    }
+  ]
+  
