@@ -1,4 +1,3 @@
-// Home.tsx
 import Link from "next/link";
 import prisma from "../db";
 import TodoItem from "./TodoItem";
@@ -16,30 +15,44 @@ async function toggleTodo(id: string, complete: boolean) {
 export default async function Home() {
   const todos = await getTodos();
 
-  const todoItems = todos.map(todo => ({
-    id: todo.id,
-    title: todo.title,
-    complete: todo.complete,
-    toggleTodo: toggleTodo, // Pass toggleTodo function
-    imageUrl: "" // Set imageUrl to empty string initially
-  }));
-
   return (
     <>
       <header className="flex justify-between mb-4 items-center">
-        <PexelsComponent todos={todoItems} />
+        <h1 className="text-3xl font-bold">Recipes App</h1>
+        <Link
+          className="border border-slate-300 text-slate-300 px-2 py-1
+   rounded hover:bg-slate-700 focus-within:bg-slate-700 outline-none
+   "
+          href="/new"
+        >
+          New Recipe
+        </Link>
       </header>
 
-      {/* Integrate PexelsComponent to display images */}
+      <div className="flex flex-wrap">
+        {todos.map(todo => (
+          <Link key={todo.id} href={`/recipes/${encodeURIComponent(todo.slug)}`}>
+            {/* Pass slug instead of ID */}
+            <TodoItem
+              id={todo.id}
+              title={todo.title}
+              complete={todo.complete}
+              slug={todo.slug} // Use slug instead of id
+              toggleTodo={toggleTodo} // Pass toggleTodo function
+              imageUrl="" // Set imageUrl to empty string initially
+            />
+          </Link>
+        ))}
+      </div>
     </>
   );
 }
 
 export async function getServerSideProps() {
-    const todos = await getTodos();
-    return {
-      props: {
-        todos
-      }
-    };
-  }
+  const todos = await getTodos();
+  return {
+    props: {
+      todos
+    }
+  };
+}
