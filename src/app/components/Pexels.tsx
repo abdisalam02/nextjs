@@ -15,6 +15,7 @@ export default function PexelsComponent({ todos }: PexelsComponentProps) {
       try {
         const fetchedImageUrls = await Promise.all(
           todos.map(async (todo) => {
+            // Use todo.title or todo.id to fetch images, adjust the API call as needed
             const query = todo.title;
             const apiKey =
               "ts8cgI6aSpYKCoRNECR60uERebf6uF85pLW5DZgyKSgDgTOhKyeL40g5";
@@ -46,30 +47,20 @@ export default function PexelsComponent({ todos }: PexelsComponentProps) {
   }, [todos]);
 
   return (
-    <div>
-      <header className="flex justify-between mb-4 items-center">
-        <h1 className="text-3xl font-bold">Recipes App</h1>
-        <Link
-          className="border border-slate-300 text-slate-300 px-2 py-1
-   rounded hover:bg-slate-700 focus-within:bg-slate-700 outline-none
-   "
-          href="/new"
-        >
-          New Recipe
-        </Link>
-      </header>
-      <div className="flex flex-wrap">
-        {imageUrls.map((imageUrl, index) => (
-          <TodoItem
-            key={todos[index].id}
-            id={todos[index].id}
-            title={todos[index].title}
-            complete={todos[index].complete}
-            toggleTodo={() => {}} // Dummy toggleTodo function
-            imageUrl={imageUrl}
-          />
-        ))}
-      </div>
+    <div className="flex flex-wrap">
+      {imageUrls.map((imageUrl, index) => (
+      <Link key={todos[index].id} href={`/recipes/${todos[index].title}`}>
+        <TodoItem
+          key={todos[index].id}
+          id={todos[index].id}
+          title={todos[index].title}
+          complete={todos[index].complete}
+          toggleTodo={() => {}} // Dummy toggleTodo function
+          imageUrl={imageUrl}
+          recipe={todos[index]} // Pass the merged todo as recipe prop
+        />
+      </Link>
+      ))}
     </div>
   );
 }

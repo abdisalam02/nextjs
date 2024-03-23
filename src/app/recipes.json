@@ -1,7 +1,7 @@
 [
     {
       "id": "1",
-      "title": "Spaghetti Carbonara",
+      "title": "pasta",
       "description": "Classic Italian pasta dish with eggs, cheese, pancetta, and black pepper.",
       "ingredients": [
         "200g spaghetti",
@@ -22,7 +22,7 @@
     },
     {
       "id": "2",
-      "title": "Chicken Alfredo",
+      "title": "rice",
       "description": "Creamy pasta dish with tender chicken, garlic, and Parmesan cheese.",
       "ingredients": [
         "300g fettuccine",
@@ -46,7 +46,7 @@
     },
     {
       "id": "3",
-      "title": "Margherita Pizza",
+      "title": "bread",
       "description": "Classic Italian pizza topped with tomato sauce, fresh mozzarella, basil, and olive oil.",
       "ingredients": [
         "1 pizza dough",
