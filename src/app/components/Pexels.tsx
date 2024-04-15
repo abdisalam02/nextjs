@@ -49,7 +49,7 @@ export default function PexelsComponent({ todos }: PexelsComponentProps) {
   return (
     <div className="flex flex-wrap">
       {imageUrls.map((imageUrl, index) => (
-      <Link key={todos[index].id} href={`/recipes/${todos[index].title}`}>
+        <Link key={todos[index].id} href={`/recipes/${todos[index].id}?title=${encodeURIComponent(todos[index].title)}`}>
         <TodoItem
           key={todos[index].id}
           id={todos[index].id}

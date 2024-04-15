@@ -27,6 +27,7 @@ const RecipeFetcher: React.FC<RecipeFetcherProps> = ({ todos }) => {
       return {
         ...todo,
         ...recipe, // Merge recipe data into todo
+        imageUrl: recipe ? todo.imageUrl : "" // Add placeholder imageUrl if recipe is not found
       };
     });
     setMergedTodos(merged);

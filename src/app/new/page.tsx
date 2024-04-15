@@ -20,7 +20,7 @@ export default function New() {
     return (
       <>
       <header className="flex justify-between mb-4 items-center">
-        <h1 className="text-3xl font-bold">New</h1>
+        <h1 className="text-3xl font-bold">New Recipe</h1>
         
       </header>
       <form className="flex gap-2 flex-col" action={createTodo}>¨
@@ -38,7 +38,7 @@ export default function New() {
         <button className="border border-slate-300 text-slate-300 px-2 py-1
         rounded hover:bg-slate-700 focus-within:bg-slate-700 outline-none
         "
-        >Create</button>
+        >Add</button>
       </div>
       </form>
       </>

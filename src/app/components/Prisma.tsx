@@ -32,7 +32,7 @@ export default async function Prisma() {
 
   return (
     <>
-      <header className="flex justify-between mb-4 items-center">
+      <header className="fixed top-0 left-0 right-0 z-50 flex justify-between items-center bg-slate-800 p-4 shadow-md">
         <h1 className="text-3xl font-bold">Recipes App</h1>
         <Link
           className="border border-slate-300 text-slate-300 px-2 py-1 rounded hover:bg-slate-700 focus-within:bg-slate-700 outline-none"
@@ -41,7 +41,8 @@ export default async function Prisma() {
           New Recipe
         </Link>
       </header>
-      <div className="flex flex-wrap justify-center">
+
+      <div className="flex flex-wrap justify-center mt-16">
         <RecipeFetcher todos={filteredTodos} />
       </div>
     </>
