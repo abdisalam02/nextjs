@@ -64,3 +64,12 @@ export default function PexelsComponent({ todos }: PexelsComponentProps) {
     </div>
   );
 }
+
+export async function getServerSideProps() {
+  const todos = await getTodos();
+  return {
+    props: {
+      todos
+    }
+  };
+}
