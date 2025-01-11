@@ -1,27 +1,24 @@
 "use client";
+
 import { useEffect, useState } from "react";
 import recipes from "../../recipes.json";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 
 type RecipePageProps = {
-  imageUrl: string;
+  params: {
+    id: string;
+  };
 };
 
-const RecipePage = ({ imageUrl }: RecipePageProps) => {
+const RecipePage = ({ params }: RecipePageProps) => {
+  const { id } = params;
   const searchParams = useSearchParams();
   const title = searchParams ? searchParams.get("title") : null;
 
   const [recipeImage, setRecipeImage] = useState("");
 
   useEffect(() => {
-    // Check if the imageUrl is provided
-    if (imageUrl) {
-      // Use the provided imageUrl directly
-      setRecipeImage(imageUrl);
-      return;
-    }
-
     // If imageUrl is not provided, fetch image from API based on recipe title
     const fetchImage = async () => {
       if (!title) return;
@@ -51,13 +48,13 @@ const RecipePage = ({ imageUrl }: RecipePageProps) => {
     };
 
     fetchImage();
-  }, [title, imageUrl]);
+  }, [title]);
 
   if (!title) {
     return <div>Loading...</div>;
   }
 
-  const recipe = recipes.find((r) => r.title === title);
+  const recipe = recipes.find((r) => r.id === id);
 
   if (!recipe) {
     return <div>Recipe not found.</div>;
@@ -91,19 +88,19 @@ const RecipePage = ({ imageUrl }: RecipePageProps) => {
           </p>
           <div
             style={{
-              width: "900px", // Set width to 400px
-              height: "500px", // Set height to 300px
-              overflow: "hidden", // Hide any overflow
+              width: "900px",
+              height: "500px",
+              overflow: "hidden",
             }}
           >
             <img
               className="rounded-l group-hover:scale-105 duration-300"
-              src={recipeImage} // Set src to the imageUrl prop
+              src={recipeImage}
               alt="card image"
               style={{
-                width: "100%", // Ensure image fills container width
-                height: "100%", // Ensure image fills container height
-                objectFit: "cover", // Maintain aspect ratio and cover container
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
               }}
             />
           </div>

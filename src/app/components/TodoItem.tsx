@@ -13,7 +13,8 @@ export type TodoItemProps = {
         ingredients: string[];
         instructions: string[];
       }
-    | undefined; // Ensure recipe can be undefined
+    | undefined
+     // Ensure recipe can be undefined
 };
 
 const TodoItem: React.FC<TodoItemProps> = ({
